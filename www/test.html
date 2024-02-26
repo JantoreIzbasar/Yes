@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <header>
+        <h1 class="logo">ET</h1>
+        <div class="header_text">
+            <h1>EduTest</h1>
+            <p>Онлайн тестировщик</p>
+        </div>
+    </header> 
+    <form name="quiz" class="quiz" id="quiz" action="javascript:check();">
+        <h1>Название теста</h1>
+
+        <h3>Сколько будет 2+2</h3>
+        <input type="radio" name="question1" value="yes" id="value1">4<br>
+        <input type="radio" name="question1" value="no" id="value2">5<br>
+        <input type="radio" name="question1" value="no" id="value3">рыба<br>
+
+        <h3>Жи Ши пиши...</h3>
+        <input type="radio" name="question2" value="yes" id="value1">Через "И"<br>
+        <input type="radio" name="question2" value="no" id="value2">От душы<br>
+        <input type="radio" name="question2" value="no" id="value3">Не знаю<br>
+
+        <h3>Вы человек?</h3>
+        <input type="radio" name="question3" value="yes" id="value1">Да<br>
+        <input type="radio" name="question3" value="no" id="value2">Нет<br>
+        <input type="radio" name="question3" value="no" id="value3">Не знаю<br>
+
+        
+    </form>
+    <button id="button">Проверить</button>
+    <script >
+        function check(){
+            var yes = 0
+            var no = 0
+            var result = ""
+            var choice
+            for (var v = 1; v <= 3; v++){
+                var q = document.forms["quiz"].elements["question" + v]
+                for (var i = 1; i <= q.length; i++)
+                if (q[i].checked) {
+                    choice = q[i].value
+                }
+                if (choice == "yes") {
+                    yes++
+                }
+                if (choice == "no") {
+                    no++
+                }
+                
+            }
+            alert(yes)
+        }
+    </script>
+</body>
+</html>
